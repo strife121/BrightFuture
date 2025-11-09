@@ -1,0 +1,16 @@
+{
+  "platform": "react",
+  "srcDir": "src",
+  "style": {
+    "scheme": "css"
+  },
+  "code": {
+    "lang": "js"
+  },
+  "projects": [
+    {
+      "id": "7Bo67viuWaudxLwWeikc65",
+      "version": "published"
+    }
+  ]
+}
