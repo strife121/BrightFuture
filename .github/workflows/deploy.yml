@@ -15,11 +15,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - run: npm ci
-      - run: npm run build:static
+          node-version: '22'   # <<=== было 18, ставим 22
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm install
+
+      - name: Show versions
+        run: |
+          node -v
+          npm -v
+
+      - name: Build (vite)
+        run: npm run build
+
+      - name: Export static (snap.mjs)
+        run: node snap.mjs
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
